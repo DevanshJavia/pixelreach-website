@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  
+  /* User-Requested Palette */
+  --color-palette-sage: #D8E2DC;
+  --color-palette-cream: #FFE5D9;
+  --color-palette-blush: #ffcad4;
+  --color-palette-rose: #f4acb7;
+  --color-palette-mauve: #9d8189;
+
+  /* Harmonious depth and contrast companions */
+  --color-palette-mauve-dark: #5c434c;
+  --color-palette-mauve-deep: #2c1d23;
+  --color-palette-rose-dark: #d88392;
+  --color-palette-rose-deep: #8e3646;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: #2c1d23;
+    background-color: #fbf8f7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
