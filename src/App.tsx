@@ -22,6 +22,9 @@ import { insightsArticles } from './data/articlesData';
 export default function App() {
   const getPageFromHash = (): PageId => {
     const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase();
+    if (hash === 'blog') {
+      return 'insights';
+    }
     const validPages: PageId[] = ['home', 'about', 'services', 'portfolio', 'insights', 'pricing', 'contact'];
     if (validPages.includes(hash as PageId)) {
       return hash as PageId;
@@ -49,7 +52,7 @@ export default function App() {
       about: 'About PixelReach – Adelaide Digital Marketing Consultancy',
       services: 'Services – Web Design, SEO & Analytics Adelaide | PixelReach',
       portfolio: 'Concept Portfolio – South Australian Web & SEO Cases | PixelReach',
-      insights: 'Insights & Guides – Digital Marketing for Adelaide Small Business | PixelReach',
+      insights: 'Blog & Insights – Digital Marketing for Adelaide Small Business | PixelReach',
       pricing: 'Transparent Pricing & Packages AUD – PixelReach Adelaide',
       contact: 'Book a Consultation – PixelReach Adelaide Digital Marketing'
     };
@@ -74,7 +77,7 @@ export default function App() {
 
   const navigateTo = (page: PageId) => {
     setCurrentPage(page);
-    window.location.hash = page === 'home' ? '' : `#/${page}`;
+    window.location.hash = page === 'home' ? '' : page === 'insights' ? '#/blog' : `#/${page}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

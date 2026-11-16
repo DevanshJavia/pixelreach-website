@@ -42,7 +42,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, onOpenAr
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#ffcad4] bg-[#47333a]/80 px-3 py-1 rounded-md border border-[#9d8189]/50 inline-block">
-              Practical Knowledge
+              PixelReach Blog · Practical Knowledge
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#FFE5D9] leading-tight">
               Actionable digital marketing guides for South Australian small business.

@@ -16,8 +16,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     { id: 'about', label: 'About' },
     { id: 'services', label: 'Services' },
     { id: 'portfolio', label: 'Portfolio' },
-    { id: 'insights', label: 'Insights' },
     { id: 'pricing', label: 'Pricing' },
+    { id: 'insights', label: 'Blog' },
     { id: 'contact', label: 'Contact' }
   ];
 
