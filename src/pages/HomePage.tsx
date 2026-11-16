@@ -3,6 +3,8 @@ import { PageId } from '../types';
 import { servicesData } from '../data/servicesData';
 import { AuditWidget } from '../components/AuditWidget';
 import adelaideBadge from '../assets/adelaide-badge.svg';
+import heroBackdrop from '../assets/images/hero_adelaide_backdrop_1794815556400.jpg';
+import webDesignShowcase from '../assets/images/web_design_showcase_1794815556933.jpg';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -43,7 +45,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenProject })
     <div className="space-y-24 sm:space-y-32 pb-16">
       
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#2c1d23] via-[#35232a] to-[#25181e] text-[#FFE5D9] pt-16 sm:pt-24 pb-20 sm:pb-28 border-b border-[#47333a]">
+      <section className="relative overflow-hidden bg-[#2c1d23] text-[#FFE5D9] pt-16 sm:pt-24 pb-20 sm:pb-28 border-b border-[#47333a]">
+        {/* Architectural Adelaide CBD background photo with deep plum gradient wash */}
+        <img
+          src={heroBackdrop}
+          alt=""
+          aria-hidden="true"
+          referrerPolicy="no-referrer"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-25 pointer-events-none select-none"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2c1d23]/85 via-[#35232a]/80 to-[#25181e]/95 pointer-events-none" />
         {/* Architectural ambient background glow matching palette */}
         <div className="absolute inset-0 pointer-events-none opacity-25">
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#f4acb7] blur-[140px] rounded-full" />
@@ -381,24 +392,35 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenProject })
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-[#1f1418] p-6 rounded-2xl border border-[#47333a]">
-              <span className="text-xs font-mono text-[#f4acb7] block mb-2">Technical Benchmark</span>
-              <div className="space-y-3 text-xs text-[#D8E2DC] font-mono">
-                <div className="flex justify-between py-1 border-b border-[#47333a]">
-                  <span>Performance:</span>
-                  <span className="text-[#f4acb7] font-bold">100 / 100</span>
-                </div>
-                <div className="flex justify-between py-1 border-b border-[#47333a]">
-                  <span>Accessibility:</span>
-                  <span className="text-[#f4acb7] font-bold">100 / 100</span>
-                </div>
-                <div className="flex justify-between py-1 border-b border-[#47333a]">
-                  <span>Best Practices:</span>
-                  <span className="text-[#f4acb7] font-bold">100 / 100</span>
-                </div>
-                <div className="flex justify-between py-1 border-b border-[#47333a]">
-                  <span>Local SEO Schema:</span>
-                  <span className="text-[#f4acb7] font-bold">Validated</span>
+            <div className="lg:col-span-5 space-y-4">
+              <div className="rounded-2xl overflow-hidden border border-[#47333a] bg-[#1f1418] shadow-lg">
+                <img
+                  src={webDesignShowcase}
+                  alt="Desktop and mobile e-commerce UI concept mockup for Norwood Specialty Coffee Roasters"
+                  referrerPolicy="no-referrer"
+                  className="w-full aspect-[4/3] object-cover"
+                />
+              </div>
+
+              <div className="bg-[#1f1418] p-5 rounded-2xl border border-[#47333a]">
+                <span className="text-xs font-mono text-[#f4acb7] block mb-2">Technical Benchmark</span>
+                <div className="space-y-2.5 text-xs text-[#D8E2DC] font-mono">
+                  <div className="flex justify-between py-1 border-b border-[#47333a]">
+                    <span>Performance:</span>
+                    <span className="text-[#f4acb7] font-bold">100 / 100</span>
+                  </div>
+                  <div className="flex justify-between py-1 border-b border-[#47333a]">
+                    <span>Accessibility:</span>
+                    <span className="text-[#f4acb7] font-bold">100 / 100</span>
+                  </div>
+                  <div className="flex justify-between py-1 border-b border-[#47333a]">
+                    <span>Best Practices:</span>
+                    <span className="text-[#f4acb7] font-bold">100 / 100</span>
+                  </div>
+                  <div className="flex justify-between py-1">
+                    <span>Local SEO Schema:</span>
+                    <span className="text-[#f4acb7] font-bold">Validated</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -408,8 +430,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenProject })
 
       {/* 7. Consultation Call to Action Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-[#2c1d23] via-[#3d2832] to-[#47333a] rounded-3xl p-8 sm:p-14 text-[#FFE5D9] text-center border border-[#47333a] relative overflow-hidden">
-          <div className="max-w-2xl mx-auto space-y-6">
+        <div className="bg-[#2c1d23] rounded-3xl p-8 sm:p-14 text-[#FFE5D9] text-center border border-[#47333a] relative overflow-hidden">
+          <img
+            src={heroBackdrop}
+            alt=""
+            aria-hidden="true"
+            referrerPolicy="no-referrer"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-15 pointer-events-none select-none"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2c1d23]/90 via-[#3d2832]/85 to-[#47333a]/90 pointer-events-none" />
+          <div className="relative max-w-2xl mx-auto space-y-6">
             <span className="text-xs font-bold uppercase tracking-wider text-[#ffcad4]">Ready to take the next step?</span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-[#FFE5D9] tracking-tight text-balance">
               Let's build a practical digital presence for your Adelaide business.

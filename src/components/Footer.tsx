@@ -166,7 +166,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <span>(08) 8123 4567</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-purple-400 text-[#f4acb7] shrink-0" />
+                <Mail className="w-4 h-4 text-[#f4acb7] shrink-0" />
                 <span>hello@pixelreach.com.au</span>
               </li>
               <li className="flex items-center gap-2.5 text-xs text-[#D8E2DC]/60">

@@ -18,7 +18,7 @@ export const portfolioConceptProjects: ConceptProject[] = [
     ],
     metricsHypothesis: 'Targeting sub-1.2s mobile load times and a friction-free recurring subscription workflow.',
     techStack: ['Modern Responsive Frontend', 'Tailwind CSS', 'Structured Product Schema', 'Local Store Pickup API Pattern'],
-    colorTheme: 'from-amber-900/10 to-stone-900/20'
+    colorTheme: 'from-[#FFE5D9]/80 to-[#D8E2DC]/60'
   },
   {
     id: 'hills-eco-retreat',
@@ -37,7 +37,7 @@ export const portfolioConceptProjects: ConceptProject[] = [
     ],
     metricsHypothesis: 'Engineered to reduce third-party booking commissions through a compelling direct reservation experience.',
     techStack: ['Mobile-First Layout', 'SVG Map Embed', 'Booking Flow Architecture', 'Accessibility Contrast Testing'],
-    colorTheme: 'from-emerald-950/20 to-slate-900/30'
+    colorTheme: 'from-[#D8E2DC]/90 to-[#FFE5D9]/60'
   },
   {
     id: 'bowden-joinery',
@@ -56,7 +56,7 @@ export const portfolioConceptProjects: ConceptProject[] = [
     ],
     metricsHypothesis: 'Aimed at capturing organic commercial search queries from Adelaide architects and interior designers.',
     techStack: ['Local SEO Architecture', 'JSON-LD Schema', 'Suburbs Directory Strategy', 'Mobile Speed Optimisation'],
-    colorTheme: 'from-blue-950/20 to-slate-900/30'
+    colorTheme: 'from-[#ffcad4]/45 to-[#FFE5D9]/70'
   },
   {
     id: 'king-william-legal',
@@ -75,7 +75,7 @@ export const portfolioConceptProjects: ConceptProject[] = [
     ],
     metricsHypothesis: 'Full attribution transparency enabling the firm to verify exact customer acquisition cost per practice area.',
     techStack: ['GA4 Conversion Schema', 'Google Tag Manager', 'Looker Studio Blueprint', 'Privacy-Compliant Funnel'],
-    colorTheme: 'from-indigo-950/20 to-purple-950/30'
+    colorTheme: 'from-[#f4acb7]/35 to-[#D8E2DC]/70'
   },
   {
     id: 'semaphore-surf',
@@ -94,7 +94,7 @@ export const portfolioConceptProjects: ConceptProject[] = [
     ],
     metricsHypothesis: 'Targeting stable year-round customer footfall and steady organic engagement across Adelaide western suburbs.',
     techStack: ['Content Calendar System', 'Graphic Template Spec', 'Meta Business Suite Plan', 'Engagement SLA Guide'],
-    colorTheme: 'from-cyan-950/20 to-blue-950/30'
+    colorTheme: 'from-[#FFE5D9]/85 to-[#ffcad4]/45'
   },
   {
     id: 'barossa-provisions',
@@ -113,6 +113,6 @@ export const portfolioConceptProjects: ConceptProject[] = [
     ],
     metricsHypothesis: 'Clear tracking of seasonal gifting spikes (Easter, Father’s Day, Christmas) to optimize stock allocation.',
     techStack: ['E-Commerce Funnel Tracking', 'Postcode Segmentation', 'Looker Reporting Mockup', 'Responsive UI Grid'],
-    colorTheme: 'from-violet-950/20 to-slate-900/30'
+    colorTheme: 'from-[#D8E2DC]/80 to-[#f4acb7]/35'
   }
 ];

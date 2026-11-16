@@ -13,6 +13,10 @@ import {
   ChevronRight,
   ShieldCheck
 } from 'lucide-react';
+import heroBackdrop from '../assets/images/hero_adelaide_backdrop_1794815556400.jpg';
+import webDesignShowcase from '../assets/images/web_design_showcase_1794815556933.jpg';
+import studioConsultation from '../assets/images/studio_consultation_1794815556837.jpg';
+import analyticsWorkspace from '../assets/images/analytics_workspace_1794815557003.jpg';
 
 interface ServicesPageProps {
   onNavigate: (page: PageId) => void;
@@ -38,12 +42,48 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
     }
   };
 
+  const getServiceVisual = (serviceId: string) => {
+    switch (serviceId) {
+      case 'website-design':
+        return {
+          src: webDesignShowcase,
+          alt: 'Desktop and smartphone responsive website UI concept showcase'
+        };
+      case 'seo':
+        return {
+          src: heroBackdrop,
+          alt: 'Adelaide CBD commercial precinct representing local Google Maps search prominence'
+        };
+      case 'social-media':
+        return {
+          src: studioConsultation,
+          alt: 'Small-business studio planning local social media storytelling and content'
+        };
+      case 'analytics-reporting':
+      default:
+        return {
+          src: analyticsWorkspace,
+          alt: 'Digital marketing analytics dashboard showing conversion trends on a tablet'
+        };
+    }
+  };
+
+  const serviceVisual = getServiceVisual(activeService.id);
+
   return (
     <div className="space-y-20 sm:space-y-28 pb-20">
       
       {/* Header Banner */}
-      <section className="bg-gradient-to-b from-[#2c1d23] via-[#35232a] to-[#25181e] text-[#FFE5D9] py-16 sm:py-24 border-b border-[#47333a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-[#2c1d23] text-[#FFE5D9] py-16 sm:py-24 border-b border-[#47333a]">
+        <img
+          src={heroBackdrop}
+          alt=""
+          aria-hidden="true"
+          referrerPolicy="no-referrer"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-20 pointer-events-none select-none"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2c1d23]/85 via-[#35232a]/85 to-[#25181e]/95 pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#ffcad4] bg-[#47333a]/80 px-3 py-1 rounded-md border border-[#9d8189]/50 inline-block">
               Core Capabilities
@@ -100,16 +140,27 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               </p>
             </div>
 
-            <div className="bg-[#FFE5D9]/30 p-6 rounded-2xl border border-[#D8E2DC] lg:max-w-xs w-full space-y-2 shrink-0">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#9d8189]">Ideal For:</span>
-              <p className="text-xs text-[#2c1d23] font-medium leading-relaxed">
-                {activeService.idealFor}
-              </p>
-              <div className="pt-3 border-t border-[#D8E2DC] mt-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#963847]">Primary Commercial Outcome:</span>
-                <p className="text-xs text-[#2c1d23] font-semibold mt-1">
-                  {activeService.keyBenefit}
+            <div className="lg:max-w-xs w-full space-y-4 shrink-0">
+              <div className="rounded-2xl overflow-hidden border border-[#D8E2DC] shadow-xs bg-[#FFE5D9]/20">
+                <img
+                  src={serviceVisual.src}
+                  alt={serviceVisual.alt}
+                  referrerPolicy="no-referrer"
+                  className="w-full aspect-[4/3] object-cover"
+                />
+              </div>
+
+              <div className="bg-[#FFE5D9]/30 p-6 rounded-2xl border border-[#D8E2DC] space-y-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#9d8189]">Ideal For:</span>
+                <p className="text-xs text-[#2c1d23] font-medium leading-relaxed">
+                  {activeService.idealFor}
                 </p>
+                <div className="pt-3 border-t border-[#D8E2DC] mt-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#963847]">Primary Commercial Outcome:</span>
+                  <p className="text-xs text-[#2c1d23] font-semibold mt-1">
+                    {activeService.keyBenefit}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

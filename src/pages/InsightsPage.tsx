@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { PageId } from '../types';
 import { insightsArticles } from '../data/articlesData';
 import { Clock, Calendar, ArrowRight, BookOpen, Compass, CheckCircle } from 'lucide-react';
+import heroBackdrop from '../assets/images/hero_adelaide_backdrop_1794815556400.jpg';
+import analyticsWorkspace from '../assets/images/analytics_workspace_1794815557003.jpg';
 
 interface InsightsPageProps {
   onNavigate: (page: PageId) => void;
@@ -21,8 +23,16 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, onOpenAr
     <div className="space-y-16 sm:space-y-24 pb-20">
       
       {/* Header Banner */}
-      <section className="bg-gradient-to-b from-[#2c1d23] via-[#35232a] to-[#25181e] text-[#FFE5D9] py-16 sm:py-24 border-b border-[#47333a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-[#2c1d23] text-[#FFE5D9] py-16 sm:py-24 border-b border-[#47333a]">
+        <img
+          src={heroBackdrop}
+          alt=""
+          aria-hidden="true"
+          referrerPolicy="no-referrer"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-20 pointer-events-none select-none"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2c1d23]/85 via-[#35232a]/85 to-[#25181e]/95 pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#ffcad4] bg-[#47333a]/80 px-3 py-1 rounded-md border border-[#9d8189]/50 inline-block">
               Practical Knowledge
@@ -107,20 +117,30 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, onOpenAr
 
       {/* Advisory Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#2c1d23] text-[#FFE5D9] rounded-3xl p-8 sm:p-12 border border-[#47333a] flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 max-w-xl">
-            <h3 className="text-xl sm:text-2xl font-bold">Have a specific question about your marketing?</h3>
-            <p className="text-xs sm:text-sm text-[#D8E2DC]/80">
-              We offer free 20-minute digital audits for Adelaide business owners. No sales pressure, just practical advice on what to prioritize next.
-            </p>
+        <div className="bg-[#2c1d23] text-[#FFE5D9] rounded-3xl p-8 sm:p-10 border border-[#47333a] grid grid-cols-1 lg:grid-cols-12 items-center gap-8">
+          <div className="lg:col-span-4 rounded-2xl overflow-hidden border border-[#47333a] bg-[#1f1418]">
+            <img
+              src={analyticsWorkspace}
+              alt="Digital analytics workspace displaying growth metrics and strategy notebook"
+              referrerPolicy="no-referrer"
+              className="w-full aspect-[4/3] object-cover"
+            />
           </div>
-          <button
-            onClick={() => onNavigate('contact')}
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 bg-[#f4acb7] hover:bg-[#ffcad4] text-[#2c1d23] text-xs font-semibold uppercase tracking-wider rounded-xl shadow-lg transition-all"
-          >
-            <span>Book 20-Min Audit</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          <div className="lg:col-span-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <h3 className="text-xl sm:text-2xl font-bold">Have a specific question about your marketing?</h3>
+              <p className="text-xs sm:text-sm text-[#D8E2DC]/80">
+                We offer free 20-minute digital audits for Adelaide business owners. No sales pressure, just practical advice on what to prioritize next.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('contact')}
+              className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#f4acb7] hover:bg-[#ffcad4] text-[#2c1d23] text-xs font-semibold uppercase tracking-wider rounded-xl shadow-lg transition-all"
+            >
+              <span>Book 20-Min Audit</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
       </section>
 

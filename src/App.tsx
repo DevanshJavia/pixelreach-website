@@ -101,7 +101,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-purple-100 selection:text-purple-900">
+    <div className="min-h-screen flex flex-col bg-[#fbf8f7] text-[#2c1d23] selection:bg-[#ffcad4] selection:text-[#2c1d23]">
       {/* 3-Zone Navigation Bar */}
       <Navbar currentPage={currentPage} onNavigate={navigateTo} />
 
