@@ -2,6 +2,69 @@ import { InsightArticle } from '../types';
 
 export const insightsArticles: InsightArticle[] = [
   {
+    id: 'best-digital-marketing-sub-themes',
+    slug: 'best-digital-marketing-sub-themes',
+    title: 'The Best Digital Marketing Playbook: 5 Sub-Themes for Growth-Obsessed Businesses',
+    category: 'Strategy',
+    readTime: '7 min read',
+    publishDate: 'November 16, 2026',
+    featured: true,
+    excerpt: 'When customers are obsessed with finding the best digital marketing strategy, broad buzzwords fall flat. Discover the five focused sub-themes that connect traditional marketing and digital marketing into steady local growth.',
+    content: [
+      'Talk to ambitious small-business owners across Adelaide today and one pattern stands out immediately: customers are genuinely obsessed with digital marketing. Every week, founders ask what the best digital marketing setup actually looks like—and why so many "digital marketing marketing" packages promise the world while delivering vague spreadsheets.',
+      'The truth is that effective online growth is rarely about chasing one viral channel. Instead, the best digital marketing outcomes happen when you break a broad goal down into focused, practical sub-themes that link customer psychology, search visibility, and real conversion tracking.'
+    ],
+    sections: [
+      {
+        subTheme: 'Sub-Theme 01 · Alignment',
+        heading: 'Connecting Traditional Marketing and Digital Marketing',
+        paragraphs: [
+          'Too many businesses treat offline reputation and online campaigns as two completely separate worlds. In reality, bridging marketing and digital marketing is what turns casual word-of-mouth into booked jobs.',
+          'When a neighbour recommends your business over coffee, that prospect immediately searches your name on Google. If your website messaging, reviews, and local listings echo the same grounded credibility they heard in person, your marketing and digital marketing work together as one trust engine.'
+        ]
+      },
+      {
+        subTheme: 'Sub-Theme 02 · Foundations',
+        heading: 'Building a Digital Marketing System That Converts First',
+        paragraphs: [
+          'Before spending a dollar on ads, every business needs a digital marketing foundation built around speed, clarity, and mobile usability. Sending paid clicks to a slow website or an unverified Google Business Profile wastes your budget before a conversation even begins.',
+          'Start with the fundamentals: clear service descriptions, prominent local contact buttons, and suburb-relevant pages. A digital marketing plan anchored in conversion readiness makes every future campaign dramatically more cost-effective.'
+        ]
+      },
+      {
+        subTheme: 'Sub-Theme 03 · Strategy vs. Tactics',
+        heading: 'Balancing Brand Craft with Digital & Marketing Discipline',
+        paragraphs: [
+          'One reason business owners feel overwhelmed by digital and marketing advice is that agencies often confuse technical tools with strategy. Knowing how to schedule posts or configure tags is the "digital" side; understanding why a customer chooses you over three nearby competitors is the "marketing" side.',
+          'High-performing digital & marketing campaigns marry both disciplines—pairing empathetic, plain-English offers with clean SEO structure, structured data, and consistent brand visuals across every touchpoint.'
+        ]
+      },
+      {
+        subTheme: 'Sub-Theme 04 · Cutting Through Hype',
+        heading: 'Escaping the "Marketing Digital Marketing" Echo Chamber',
+        paragraphs: [
+          'Search online for advice and you quickly hit an endless loop of recycled "marketing digital marketing" jargon—funnel hacks, overnight growth secrets, and generic templates built for overseas SaaS giants rather than local businesses.',
+          'Practical small-business digital marketing rejects vanity hype. Instead of mimicking noisy online trends, focus on answering the exact questions your South Australian customers type into search bars right before they pick up the phone.'
+        ]
+      },
+      {
+        subTheme: 'Sub-Theme 05 · Measurement',
+        heading: 'Proving What the Best Digital Marketing Actually Delivers',
+        paragraphs: [
+          'You cannot improve what you cannot verify. Even the smartest digital marketing campaigns lose momentum if reports only celebrate raw impressions instead of phone taps, quote forms, and consultation bookings.',
+          'By tagging real customer actions in Google Analytics 4 and reviewing channel trends monthly, you gain clear proof of which sub-themes bring qualified buyers—and full confidence to double down on what works.'
+        ]
+      }
+    ],
+    actionChecklist: [
+      'Audit how your offline marketing and digital marketing align—ensure your website reflects the same promises you make in person.',
+      'Lock down a digital marketing foundation first: sub-1.5s mobile load speed, clear phone CTA, and a complete Google Business Profile.',
+      'Review each page for both digital and marketing clarity: crisp SEO headings paired with plain-English customer benefits.',
+      'Replace noisy "marketing digital marketing" vanity metrics with real lead tracking (phone clicks, form fills, and bookings).',
+      'Pick one sub-theme to strengthen each month rather than overhauling every channel at once.'
+    ]
+  },
+  {
     id: 'adelaide-local-seo-guide',
     slug: 'adelaide-local-seo-guide',
     title: 'The Adelaide Local SEO Guide: How Small Businesses Win on Google Maps',

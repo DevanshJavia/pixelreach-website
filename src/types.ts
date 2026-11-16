@@ -27,6 +27,12 @@ export interface ConceptProject {
   colorTheme: string;
 }
 
+export interface InsightArticleSection {
+  subTheme: string;
+  heading: string;
+  paragraphs: string[];
+}
+
 export interface InsightArticle {
   id: string;
   slug: string;
@@ -35,6 +41,8 @@ export interface InsightArticle {
   readTime: string;
   publishDate: string;
   excerpt: string;
+  featured?: boolean;
+  sections?: InsightArticleSection[];
   content: string[];
   actionChecklist: string[];
 }

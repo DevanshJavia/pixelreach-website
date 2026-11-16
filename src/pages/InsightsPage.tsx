@@ -5,6 +5,8 @@ import { Clock, Calendar, ArrowRight, BookOpen, Compass, CheckCircle } from 'luc
 import heroBackdrop from '../assets/images/hero_adelaide_backdrop_1794815556400.jpg';
 import analyticsWorkspace from '../assets/images/analytics_workspace_1794815557003.jpg';
 
+import studioConsultation from '../assets/images/studio_consultation_1794815556837.jpg';
+
 interface InsightsPageProps {
   onNavigate: (page: PageId) => void;
   onOpenArticle: (articleId: string) => void;
@@ -18,6 +20,11 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, onOpenAr
   const filteredArticles = selectedCategory === 'All'
     ? insightsArticles
     : insightsArticles.filter((a) => a.category === selectedCategory);
+
+  const featuredArticle = filteredArticles.find((a) => a.featured);
+  const gridArticles = featuredArticle
+    ? filteredArticles.filter((a) => a.id !== featuredArticle.id)
+    : filteredArticles;
 
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
@@ -66,10 +73,88 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, onOpenAr
         </div>
       </section>
 
+      {/* Featured Sub-Theme Pillar Post */}
+      {featuredArticle && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <article className="bg-white rounded-3xl border border-[#D8E2DC] shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-5 bg-[#FFE5D9]/25 border-b lg:border-b-0 lg:border-r border-[#D8E2DC] flex flex-col justify-between">
+              <img
+                src={studioConsultation}
+                alt="Digital marketing strategy planning in a boutique Adelaide studio"
+                referrerPolicy="no-referrer"
+                className="w-full aspect-[4/3] object-cover"
+              />
+              {featuredArticle.sections && (
+                <div className="p-6 space-y-2.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#963847]">
+                    5 Focused Sub-Themes Inside
+                  </span>
+                  <ul className="space-y-2 text-xs text-[#2c1d23]">
+                    {featuredArticle.sections.map((sec, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="font-mono text-[11px] font-bold text-[#963847] shrink-0">
+                          0{i + 1}
+                        </span>
+                        <span className="font-medium leading-snug">{sec.heading}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <div className="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-between space-y-6">
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center gap-2.5 text-xs text-[#9d8189]">
+                  <span className="px-2.5 py-0.5 rounded bg-[#2c1d23] text-[#FFE5D9] font-semibold uppercase tracking-wider text-[11px]">
+                    Featured Guide
+                  </span>
+                  <span className="font-semibold text-[#963847]">{featuredArticle.category}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{featuredArticle.publishDate}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{featuredArticle.readTime}</span>
+                </div>
+
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#2c1d23] leading-tight">
+                  {featuredArticle.title}
+                </h2>
+
+                <p className="text-sm sm:text-base text-[#5c434c] leading-relaxed">
+                  {featuredArticle.excerpt}
+                </p>
+
+                <div className="bg-[#FFE5D9]/30 p-4 rounded-xl border border-[#D8E2DC] text-xs text-[#2c1d23] space-y-1.5">
+                  <span className="font-bold uppercase tracking-wider text-[11px] text-[#963847] block">
+                    Why Customers Read This Playbook:
+                  </span>
+                  <p className="text-[#5c434c] leading-relaxed">
+                    {featuredArticle.content[0]}
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-[#D8E2DC]/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <span className="text-xs text-[#5c434c]">
+                  Includes 5 sub-theme deep dives + action checklist
+                </span>
+                <button
+                  onClick={() => onOpenArticle(featuredArticle.id)}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#f4acb7] hover:bg-[#ffcad4] text-[#2c1d23] text-xs font-semibold uppercase tracking-wider rounded-xl shadow-sm transition-all"
+                >
+                  <span>Read Complete Guide</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          </article>
+        </section>
+      )}
+
       {/* Articles Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredArticles.map((article) => (
+          {gridArticles.map((article) => (
             <article
               key={article.id}
               className="bg-white rounded-2xl border border-[#D8E2DC] p-6 sm:p-7 shadow-sm hover:border-[#f4acb7] hover:shadow-lg transition-all flex flex-col justify-between group"

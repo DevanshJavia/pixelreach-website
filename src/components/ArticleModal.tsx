@@ -73,6 +73,30 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
             ))}
           </div>
 
+          {/* Sub-Theme Sections (if provided) */}
+          {article.sections && article.sections.length > 0 && (
+            <div className="space-y-6 pt-2">
+              {article.sections.map((section, idx) => (
+                <section
+                  key={idx}
+                  className="rounded-2xl border border-[#D8E2DC] bg-white p-5 sm:p-6 space-y-3 shadow-xs"
+                >
+                  <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#963847] bg-[#FFE5D9]/60 px-2.5 py-1 rounded">
+                    {section.subTheme}
+                  </span>
+                  <h2 className="text-lg sm:text-xl font-bold text-[#2c1d23] leading-snug">
+                    {section.heading}
+                  </h2>
+                  <div className="space-y-3 text-[#5c434c] text-sm sm:text-base leading-relaxed">
+                    {section.paragraphs.map((p, pIdx) => (
+                      <p key={pIdx}>{p}</p>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          )}
+
           {/* Action Checklist Box */}
           <div className="bg-[#FFE5D9]/30 border border-[#D8E2DC] rounded-xl p-6 space-y-4">
             <div className="flex items-center gap-2 text-[#2c1d23] font-bold text-base">
